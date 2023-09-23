@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ChartJS</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  </head>
+  <body>
+    <div
+      style="
+        height: 800px;
+        width: 400px;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      "
+    >
+      <canvas id="myChart" style="height: 200px; width: 200px"></canvas>
+    </div>
+
+    <script>
+      const ctx = document.getElementById("myChart");
+
+      const classObject = {
+        class1: 80,
+        class2: 90,
+        class3: 56,
+        class4: 70,
+        class5: 59,
+      };
+
+      let lebel = Object.keys(classObject);
+      let classValue = Object.values(classObject);
+
+      new Chart(ctx, {
+        type: "bar",
+        data: {
+          labels: lebel,
+          datasets: [
+            {
+              label: "# Total Passed",
+              data: classValue,
+              borderWidth: 1,
+            },
+          ],
+        },
+        options: {
+          scales: {
+            y: {
+              beginAtZero: true,
+            },
+          },
+        },
+      });
+    </script>
+  </body>
+</html>
