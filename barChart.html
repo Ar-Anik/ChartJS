@@ -24,20 +24,20 @@
       const ctx = document.getElementById("myChart");
 
       const classObject = {
-        class1: 80,
-        class2: 90,
-        class3: 56,
-        class4: 70,
-        class5: 59,
+        classOne: 80,
+        classTwo: 90,
+        classThree: 56,
+        classFour: 70,
+        classFive: 59,
       };
 
-      let lebel = Object.keys(classObject);
+      let label = Object.keys(classObject);
       let classValue = Object.values(classObject);
 
       new Chart(ctx, {
         type: "bar",
         data: {
-          labels: lebel,
+          labels: label,
           datasets: [
             {
               label: "# Total Passed",
